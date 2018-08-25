@@ -12,21 +12,22 @@ end
 
 function [ linear, angular] = OS4dynamics_init_state()
 
-speed = [0.1 0 0];
-position =[0.1 0.1 -4];
+speed = [0 0 0.0001];
+position =[0 0 0];
 
 linear.pos = position;
 linear.vel = speed;
-linear.vinf = sqrt(speed(1)^2+speed(2)^2+speed(3)^2);
+% linear.vinf = sqrt(speed(1)^2+speed(2)^2+speed(3)^2);
+linear.vinf = inf;
 %initX=[1 ;0; -0.1; 0; 0; 0];        % tail sit
-%initX=[2 ;0; 0.5; 0; 0; 0];         % straight & level launch
+% initX=[2 ;0; 0.5; 0; 0; 0];         % straight & level launch
 
 roll_rate = 0;      % p
 pitch_rate = 0;     % q
 yaw_rate = 0;       % r
 
 t3 = 0;         % yaw
-t2 = -30*pi/180;         % pitch
+t2 = 0;         % pitch
 t1 = 0;         % row
 
 q0 = sin(t1/2)*sin(t2/2)*sin(t3/2) + cos(t1/2)*cos(t2/2)*cos(t3/2);         % cos(theta/2)
