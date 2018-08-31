@@ -12,7 +12,7 @@ end
 
 function [ linear, angular] = OS4dynamics_init_state()
 
-speed = [0 0 0.0001];
+speed = [0 0 1e-10];
 position =[0 0 0];
 
 linear.pos = position;
@@ -22,7 +22,7 @@ linear.vinf = inf;
 %initX=[1 ;0; -0.1; 0; 0; 0];        % tail sit
 % initX=[2 ;0; 0.5; 0; 0; 0];         % straight & level launch
 
-roll_rate = 0;      % p
+roll_rate = 0.01;      % p
 pitch_rate = 0;     % q
 yaw_rate = 0;       % r
 
