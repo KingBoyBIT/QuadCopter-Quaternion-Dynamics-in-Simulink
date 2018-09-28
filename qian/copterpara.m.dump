@@ -1,0 +1,16 @@
+m = 0.75;
+g = 9.8;
+yaw = 0;
+
+Ixx = 19.688e-3;
+Iyy = 19.688e-3;
+Izz = 3.938e-2;
+L = 0.25;
+km = 7.5e-7;            %力矩系数
+kf = 3.13e-5;           %升力系数
+
+wh = sqrt(m*g/(4*kf));
+aaa=inv([kf kf kf kf;
+	0 -kf 0 kf;
+	-kf 0 kf 0;
+	-km km -km km]);
